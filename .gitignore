@@ -1,0 +1,23 @@
+# Ignore everything by default
+*
+!.gitignore
+
+# Allow directories
+!*/
+
+# Allow specific file types
+!*.md
+!*.sh
+!*.yml
+!*.yaml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
