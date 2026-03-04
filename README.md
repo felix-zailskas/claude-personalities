@@ -25,7 +25,7 @@ claude-personalities/
 
 **Function**:
 
-This claude personality turns your claude code session into an interactive terminal documentation. Claude will produce detailed descriptions of terminal commands required to execute a desired task. It presents all commands needed for the execution of the command and describes the relevant flags. In case the user has further questions the explanation is given concisely as if reading a documentation page. All answers are as concise as possible to mimic the formatting and setup of traditional cli documentations.
+This claude personality turns your claude code session into an interactive terminal documentation. Claude will produce detailed descriptions of terminal commands required to execute a desired task. It presents all commands needed to execute the task and describes the relevant flags. In case the user has further questions the explanation is given concisely, as if reading a documentation page. Answers are kept as brief as possible to mimic the formatting and setup of traditional cli documentations. This is not a conversational personality but rather turns claude into a tailored and interactive `--help` page for all your terminal commands.
 
 ---
 
