@@ -5,7 +5,7 @@ A claude personality is a set of instructions in form of a `CLAUDE.md` file.
 
 By starting a claude code session within a personality directory within this project a personality is invoked by automatically loading the local `CLAUDE.md`. Since the `CLAUDE.md` of the personality is the closest to the running session, it should take precedent over other `CLAUDE.md` files in the claude instruction chain (TODO: confirm how multiple `CLAUDE.md` work exactly).
 
-The current personalities are all meant to run for a full session, it is not a task that claude completes for you like a skill but rather a mindset in which claude should operate.
+Personalities are meant to run for a full session, it is not a task that claude completes for you, like a skill, but rather a mindset in which claude operates potentially changing the feel of the interaction with claude completely.
 
 ## Project setup
 
