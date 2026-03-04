@@ -5,7 +5,7 @@ A claude personality is a set of instructions in form of a `CLAUDE.md` file.
 
 By starting a claude code session within a personality directory within this project a personality is invoked by automatically loading the local `CLAUDE.md`. Since the `CLAUDE.md` of the personality is the closest to the running session, it should take precedent over other `CLAUDE.md` files in the claude instruction chain (TODO: confirm how multiple `CLAUDE.md` work exactly).
 
-The current personalities are all meant to run for a full session, it is not a task that claude completes for you like a skill but rather a mindset in which claude should operate.
+Personalities are meant to run for a full session, it is not a task that claude completes for you, like a skill, but rather a mindset in which claude operates potentially changing the feel of the interaction with claude completely.
 
 ## Project setup
 
@@ -25,7 +25,7 @@ claude-personalities/
 
 **Function**:
 
-This claude personality turns your claude code session into an interactive terminal documentation. Claude will produce detailed descriptions of terminal commands required to execute a desired task. It presents all commands needed for the execution of the command and describes the relevant flags. In case the user has further questions the explanation is given concisely as if reading a documentation page. All answers are as concise as possible to mimic the formatting and setup of traditional cli documentations.
+This claude personality turns your claude code session into an interactive terminal documentation. Claude will produce detailed descriptions of terminal commands required to execute a desired task. It presents all commands needed to execute the task and describes the relevant flags. In case the user has further questions the explanation is given concisely, as if reading a documentation page. Answers are kept as brief as possible to mimic the formatting and setup of traditional cli documentations. This is not a conversational personality but rather turns claude into a tailored and interactive `--help` page for all your terminal commands.
 
 ---
 
