@@ -1,25 +1,72 @@
 # Claude Personalities
 
-This repository is a collection of claude personalities.
-A claude personality is a set of instructions in form of a `CLAUDE.md` file.
+This repository is a collection of Claude personalities and the skills to use them.
 
-By starting a claude code session within a personality directory within this project a personality is invoked by automatically loading the local `CLAUDE.md`. Since the `CLAUDE.md` of the personality is the closest to the running session, it should take precedent over other `CLAUDE.md` files in the claude instruction chain (TODO: confirm how multiple `CLAUDE.md` work exactly).
+A personality is a set of instructions stored in a `PERSONALITY.md` file. Personalities adjust Claude's response style, tone, and interaction model for an entire session. Unlike skills — which complete a specific task — a personality defines a mindset Claude operates in continuously.
 
-Personalities are meant to run for a full session, it is not a task that claude completes for you, like a skill, but rather a mindset in which claude operates potentially changing the feel of the interaction with claude completely.
+Personalities are invoked via the `adopt-personality` skill, which reads the available personalities and lets the user choose one at the start of a session.
 
-## Project setup
+## Project structure
 
 ```
 claude-personalities/
-└── {personality-name}/
-    └── CLAUDE.md
+├── personalities/
+│   └── {personality-name}/
+│       └── PERSONALITY.md
+├── skills/
+│   └── adopt-personality/
+│       └── SKILL.md
+└── setup.sh
 ```
+
+### PERSONALITY.md format
+
+Each personality is defined by a `PERSONALITY.md` file with the following structure:
+
+```markdown
+---
+name: [Name of the personality]
+description: [Short description of the personality]
+---
+
+# Task
+[How Claude should approach tasks in this personality]
+
+# Response Format
+[How Claude should format responses]
+
+# Interaction style
+[How Claude should interact with the user]
+```
+
+## Setup
+
+Run the setup script from the repo root:
+
+```bash
+./setup.sh
+```
+
+The script does two things:
+
+**1. Skill symlinks**
+
+For each skill in `skills/`, it asks whether you want to symlink it into `~/.claude/skills/`. Per skill:
+- If the skill doesn't exist yet: creates the symlink
+- If it already exists: asks whether to overwrite it
+- Skips the skill if you decline
+
+**2. Read access**
+
+Asks whether to add a `Read` permission for this repo to `~/.claude/settings.json`. This allows Claude to read personality files from this directory. If the permission is already present it does nothing.
+
+> Requires `jq`: `brew install jq`
 
 ## Existing Personalities
 
 ### Terminal Documentation
 
-**Location**: `terminal-documentation/CLAUDE.md`
+**Location**: `personalities/terminal-documentation/PERSONALITY.md`
 
 ---
 
