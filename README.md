@@ -1,3 +1,8 @@
+# NOTE
+
+This repository has been merged into 
+https://github.com/felix-zailskas/claude-toolbox
+
 # Claude Personalities
 
 This repository is a collection of Claude personalities and the skills to use them.
